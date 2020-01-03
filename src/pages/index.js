@@ -2,10 +2,12 @@ import React from "react"
 
 import Layout from "../components/Layout/Layout"
 
+import Home from "../sections/home"
+
 const App = () => {
     return (
         <Layout>
-            <h1>Home</h1>
+            <Home />
         </Layout>
     )
 }
