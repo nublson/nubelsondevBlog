@@ -1,4 +1,5 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import { Container, Wrapper } from "./Layout/Elements"
@@ -16,12 +17,27 @@ const FooterText = styled.p`
 `
 
 const Footer = () => {
+    const { site } = useStaticQuery(graphql`
+        query {
+            site {
+                siteMetadata {
+                    author
+                    year
+                }
+            }
+        }
+    `)
+
+    const { author, year } = site.siteMetadata
+
     return (
         <StyledFooter id="contact">
             <Container>
                 <Wrapper>
                     <Social />
-                    <FooterText>Copyright &copy; 2020, nubelsondev</FooterText>
+                    <FooterText>
+                        Copyright &copy; {year}, {author}{" "}
+                    </FooterText>
                 </Wrapper>
             </Container>
         </StyledFooter>

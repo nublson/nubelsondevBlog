@@ -1,4 +1,5 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import {
     faGithub,
@@ -24,18 +25,44 @@ const SocialWrapper = styled.div`
 `
 
 const Social = () => {
+    const { site } = useStaticQuery(graphql`
+        query {
+            site {
+                siteMetadata {
+                    social {
+                        twitter
+                        github
+                        instagram
+                        linkedin
+                        email
+                    }
+                }
+            }
+        }
+    `)
+
+    const { twitter, github, instagram, linkedin } = site.siteMetadata.social
+
     return (
         <SocialWrapper>
-            <Icon label="Github" href="http://youtube.com" icon={faGithub} />
+            <Icon
+                label="Github"
+                href={`https://github.com/${github}`}
+                icon={faGithub}
+            />
             <Icon
                 label="LinkedIn"
-                href="http://youtube.com"
+                href={`https://www.linkedin.com/in/${linkedin}/`}
                 icon={faLinkedinIn}
             />
-            <Icon label="Twitter" href="http://youtube.com" icon={faTwitter} />
+            <Icon
+                label="Twitter"
+                href={`https://twitter.com/${twitter}`}
+                icon={faTwitter}
+            />
             <Icon
                 label="Instagram"
-                href="http://youtube.com"
+                href={`https://www.instagram.com/${instagram}/`}
                 icon={faInstagram}
             />
         </SocialWrapper>

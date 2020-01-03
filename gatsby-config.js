@@ -3,6 +3,7 @@ module.exports = {
         title: `Nubelsondev | Blog`,
         description: `I'm a 22 years old self-taught Full-Stack Developer, from Angola, currently living in Portugal.`,
         author: `Nubelson`,
+        year: `2020`,
         blogUrl: `https://blog.nubelsondev.com`,
         social: {
             twitter: `nubelsondev`,
