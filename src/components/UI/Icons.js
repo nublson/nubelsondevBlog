@@ -25,6 +25,22 @@ const StyledLink = styled.a`
         background-color: var(--primary);
         border-color: var(--background);
     }
+
+    @media ${props => props.theme.mediaQueries.medium} {
+        width: 4rem;
+        height: 4rem;
+    }
+    @media ${props => props.theme.mediaQueries.small} {
+        width: 3.5rem;
+        height: 3.5rem;
+        margin: 0 1rem;
+        border: 1px solid var(--primary-light);
+    }
+    @media ${props => props.theme.mediaQueries.smallest} {
+        width: 3rem;
+        height: 3rem;
+        margin: 0 0.8rem;
+    }
 `
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -34,6 +50,10 @@ const StyledIcon = styled(FontAwesomeIcon)`
 
     ${StyledLink}:hover & {
         color: var(--background);
+    }
+
+    @media ${props => props.theme.mediaQueries.medium} {
+        font-size: 2rem;
     }
 `
 

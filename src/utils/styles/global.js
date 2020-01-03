@@ -14,6 +14,16 @@ const GlobalStyle = createGlobalStyle`
 
     html{
         font-size: 62.5%; /* 1rem = 10px */
+
+        @media ${props => props.theme.mediaQueries.largest} {
+            font-size: 60%;
+        }
+        @media ${props => props.theme.mediaQueries.large} {
+            font-size: 57.5%;
+        }
+        @media ${props => props.theme.mediaQueries.small} {
+            font-size: 55%;
+        }
     }
 
     body{

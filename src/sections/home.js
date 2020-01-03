@@ -24,19 +24,46 @@ const Title = styled.h1`
     text-transform: uppercase;
     backface-visibility: hidden;
 
+    @media ${props => props.theme.mediaQueries.medium} {
+        font-size: 5rem;
+    }
+    @media ${props => props.theme.mediaQueries.small} {
+        text-align: center;
+        font-size: 4.5rem;
+        position: relative;
+        line-height: 1.5;
+    }
+    @media ${props => props.theme.mediaQueries.smallest} {
+        font-size: 4rem;
+    }
+
     .textTitle {
         font-size: 2rem;
         font-weight: 300;
     }
 
     .logoSpan {
-        display: inline-block;
+        display: inline;
         font-size: 6rem;
         font-weight: 700;
         font-style: italic;
         text-decoration: line-through;
         color: var(--primary);
         transform: translateX(-2rem);
+
+        @media ${({ theme }) => theme.mediaQueries.medium} {
+            font-size: 4rem;
+        }
+
+        @media ${props => props.theme.mediaQueries.small} {
+            font-size: 3.5rem;
+            display: block;
+            position: absolute;
+            right: 30%;
+        }
+        @media ${props => props.theme.mediaQueries.smallest} {
+            font-size: 3rem;
+        }
     }
 `
 

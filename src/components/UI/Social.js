@@ -13,7 +13,14 @@ const SocialWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5rem;
+    margin-bottom: 10rem;
+
+    @media ${props => props.theme.mediaQueries.medium} {
+        margin-bottom: 8rem;
+    }
+    @media ${props => props.theme.mediaQueries.small} {
+        margin-bottom: 6rem;
+    }
 `
 
 const Social = () => {

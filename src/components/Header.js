@@ -23,10 +23,19 @@ const Wrapper = styled.div`
     align-items: center;
     overflow: hidden !important;
     height: 7rem;
+
+    @media ${({ theme }) => theme.mediaQueries.small} {
+        position: relative;
+    }
 `
 
 const StyledNav = styled.nav`
     display: flex;
+    margin-left: 2rem;
+
+    @media ${({ theme }) => theme.mediaQueries.small} {
+        position: relative;
+    }
 
     a {
         font-size: 1.6rem;
