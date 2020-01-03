@@ -49,10 +49,6 @@ const BlogItem = styled.li`
         filter: brightness(30%);
         border-radius: inherit;
     }
-
-    &:hover {
-        transform: scale(101%);
-    }
 `
 
 const BlogInfo = styled.div`
