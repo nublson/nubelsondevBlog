@@ -85,7 +85,7 @@ const Blog = () => {
                     <BlogList>
                         <BlogItem thumbnail="https://images.unsplash.com/photo-1544980919-e17526d4ed0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80">
                             <BlogInfo>
-                                <h3>My Other Blog</h3>
+                                <h3>My First Blog</h3>
                                 <p>
                                     {" "}
                                     <span>Nubelsondev</span> on January 03, 2020
