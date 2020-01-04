@@ -101,9 +101,7 @@ const Blog = () => {
                             }
                         }
                         blogTitle
-                        blogAuthor {
-                            authorName
-                        }
+                        blogAuthor
                         blogDate(formatString: "MMMM d, YYYY")
                     }
                 }
@@ -115,7 +113,6 @@ const Blog = () => {
     const nodes = edges.map(edge => {
         const { id, blogThumbnail, blogTitle, blogAuthor, blogDate } = edge.node
         const { url } = blogThumbnail.file
-        const { authorName } = blogAuthor
 
         return (
             <BlogItem key={id} thumbnail={url}>
@@ -123,7 +120,7 @@ const Blog = () => {
                     <h3>{blogTitle}</h3>
                     <p>
                         {" "}
-                        <span>{authorName}</span> on {blogDate}
+                        <span>{blogAuthor}</span> on {blogDate}
                     </p>
                 </BlogInfo>
                 <ButtonLink to="/">
