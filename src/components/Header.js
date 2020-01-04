@@ -71,7 +71,7 @@ const Header = () => {
                             Home
                         </Link>
                         <Link to="blog" spy={true} smooth={true}>
-                            Blog
+                            Articles
                         </Link>
                         <Link to="contact" spy={true} smooth={true}>
                             Contact

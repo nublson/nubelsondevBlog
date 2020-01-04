@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import {
@@ -78,24 +78,55 @@ const ButtonLink = styled(Link)`
 `
 
 const Blog = () => {
+    const data = useStaticQuery(graphql`
+        query {
+            allContentfulBlogPost {
+                edges {
+                    node {
+                        id
+                        blogThumbnail {
+                            file {
+                                url
+                            }
+                        }
+                        blogTitle
+                        blogAuthor {
+                            authorName
+                        }
+                        blogDate(formatString: "MMMM d, YYYY")
+                    }
+                }
+            }
+        }
+    `)
+
+    const { edges } = data.allContentfulBlogPost
+    const nodes = edges.map(edge => {
+        const { id, blogThumbnail, blogTitle, blogAuthor, blogDate } = edge.node
+        const { url } = blogThumbnail.file
+        const { authorName } = blogAuthor
+
+        return (
+            <BlogItem key={id} thumbnail={url}>
+                <BlogInfo>
+                    <h3>{blogTitle}</h3>
+                    <p>
+                        {" "}
+                        <span>{authorName}</span> on {blogDate}
+                    </p>
+                </BlogInfo>
+                <ButtonLink to="/">
+                    Read more <Button />{" "}
+                </ButtonLink>
+            </BlogItem>
+        )
+    })
+
     return (
         <StyledSection id="blog">
             <Container>
                 <Wrapper>
-                    <BlogList>
-                        <BlogItem thumbnail="https://images.unsplash.com/photo-1544980919-e17526d4ed0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80">
-                            <BlogInfo>
-                                <h3>My First Blog</h3>
-                                <p>
-                                    {" "}
-                                    <span>Nubelsondev</span> on January 03, 2020
-                                </p>
-                            </BlogInfo>
-                            <ButtonLink to="/">
-                                Read more <Button />{" "}
-                            </ButtonLink>
-                        </BlogItem>
-                    </BlogList>
+                    <BlogList>{nodes}</BlogList>
                 </Wrapper>
             </Container>
         </StyledSection>
