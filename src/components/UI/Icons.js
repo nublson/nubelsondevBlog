@@ -5,7 +5,7 @@ import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons"
 
 const StyledButton = styled(FontAwesomeIcon)`
     color: var(--primary);
-    margin-left: 1rem;
+    margin-left: 0.5rem;
 `
 const StyledLink = styled.a`
     text-decoration: none;
@@ -57,7 +57,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
     }
 `
 
-export const Button = ({ to }) => {
+export const ButtonIcon = ({ to }) => {
     return (
         <>
             <StyledButton icon={faLongArrowAltRight} />

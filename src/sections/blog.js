@@ -7,7 +7,7 @@ import {
     Wrapper,
     Container,
 } from "../components/Layout/Elements"
-import { Button } from "../components/UI/Icons"
+import { ButtonIcon } from "../components/UI/Icons"
 
 const BlogList = styled.ul`
     width: 100%;
@@ -36,6 +36,10 @@ const BlogItem = styled.li`
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
+
+    &:hover {
+        transform: translateY(-1rem);
+    }
 
     &::after {
         content: "";
@@ -71,10 +75,17 @@ const BlogInfo = styled.div`
 const ButtonLink = styled(Link)`
     font-size: 1.6rem;
     font-weight: bold;
+    text-decoration: line-through;
     color: var(--primary);
+    transition: all 0.2s;
 
     display: flex;
+    justify-content: flex-start;
     align-items: center;
+
+    &:hover {
+        text-decoration: line-through transparent;
+    }
 `
 
 const Blog = () => {
@@ -116,7 +127,7 @@ const Blog = () => {
                     </p>
                 </BlogInfo>
                 <ButtonLink to="/">
-                    Read more <Button />{" "}
+                    Read more <ButtonIcon />{" "}
                 </ButtonLink>
             </BlogItem>
         )
