@@ -12,7 +12,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You will need a CMS API Key ([Contentful](https://www.contentful.com/), [Netflify CMS](https://www.netlifycms.org/) ...) to dynamically fetch the data and generate a page for each Post created in CMS.
+you will need [Contentful API Key](https://www.contentful.com/) to access CMS.
+
+```javascript
+// ./.env
+CONTENTFUL_SPACE_ID = KEY
+CONTENTFUL_ACCESS_TOKEN = KEY
+```
 
 ### Installation
 
@@ -22,16 +28,21 @@ Clone the repository and run
 // With NPM
 $ npm install
 $ npm run start
+// or
+$ gatsby develop
 
 // With Yarn
 $ yarn install
 $ yarn start
+// or
+$ gatsby develop
 ```
 
 ## Built With
 
 -   [GatsbyJS](https://www.gatsbyjs.org/)
 -   [ReactJS](https://reactjs.org/)
+-   [Contentful](https://www.contentful.com/)
 -   [Styled Components](https://www.styled-components.com/)
 
 ## Contributing
