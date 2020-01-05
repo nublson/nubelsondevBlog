@@ -6,9 +6,9 @@ module.exports = {
     siteMetadata: {
         title: `Nubelsondev | Blog`,
         description: `I'm a 22 years old self-taught Full-Stack Developer, from Angola, currently living in Portugal.`,
-        author: `Nubelson`,
+        author: `Nubelson Fernandes`,
         year: `2020`,
-        blogUrl: `https://blog.nubelson.dev`,
+        blogUrl: `https://nubelsonblog.netlify.com`,
         social: {
             twitter: `nubelsondev`,
             github: `nubelsondev`,
@@ -28,6 +28,7 @@ module.exports = {
                 background_color: `#292826`,
                 theme_color: `#F9D342`,
                 display: `standalone`,
+                icon: `src/images/icon.png`,
             },
         },
         {
