@@ -1,9 +1,10 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 
-import { StyledLink } from "./Link"
-
-const CustomLogo = styled(StyledLink)`
+const CustomLogo = styled(Link)`
+    text-decoration: none;
+    color: var(--text);
     display: inline-block;
     font-size: ${props => `${props.namesize}rem`};
     font-weight: 400;

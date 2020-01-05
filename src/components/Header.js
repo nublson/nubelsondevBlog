@@ -1,10 +1,11 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 
 import Logo from "./UI/Logo"
-import { StyledLink } from "./UI/Link"
 import { Container } from "./Layout/Elements"
 import { ShakeAnimation } from "./UI/Animations"
+import { StyledLink } from "./UI/Link"
 
 const StyledHeader = styled.header`
     width: 100%;
@@ -47,7 +48,10 @@ const StyledNav = styled.nav`
     }
 `
 
-const Link = styled(StyledLink)`
+const RedirectLink = styled(Link)`
+    color: var(--text);
+    text-decoration: none;
+
     &:hover {
         color: var(--primary);
         animation: ${ShakeAnimation} 1s;
@@ -63,19 +67,14 @@ const Header = () => {
                         spanName="Blog"
                         namesize={2}
                         spansize={1.6}
-                        to={"home"}
+                        to={"/"}
                     />
 
                     <StyledNav>
-                        <Link to="home" spy={true} smooth={true}>
-                            Home
-                        </Link>
-                        <Link to="blog" spy={true} smooth={true}>
-                            Articles
-                        </Link>
-                        <Link to="contact" spy={true} smooth={true}>
+                        <RedirectLink to="/">Home</RedirectLink>
+                        <StyledLink to="contact" spy={true} smooth={true}>
                             Contact
-                        </Link>
+                        </StyledLink>
                     </StyledNav>
                 </Wrapper>
             </Container>
