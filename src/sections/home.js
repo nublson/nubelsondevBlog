@@ -18,6 +18,7 @@ const MainDiv = styled.div`
 `
 
 const Title = styled.h1`
+    color: var(--text-highlight);
     font-size: 7rem;
     font-weight: 400;
     line-height: 1;

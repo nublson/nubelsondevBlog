@@ -72,7 +72,7 @@ const Header = () => {
 
                     <StyledNav>
                         <RedirectLink to="/">Home</RedirectLink>
-                        <StyledLink to="contact" spy={true} smooth={true}>
+                        <StyledLink to="contact" spy={true} smooth="true">
                             Contact
                         </StyledLink>
                     </StyledNav>

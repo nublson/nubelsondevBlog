@@ -122,38 +122,17 @@ const BlogTemplate = ({ data }) => {
             <Blog>
                 <BlogHeader>
                     <HeaderContent>
-                        <h2>Tipos de navegação no React Native</h2>
+                        <h2>{blogTitle}</h2>
                         <p>
-                            by <span>nubelsondev</span> em January 1, 2020
+                            by <span>{blogAuthor}</span> em {blogDate}
                         </p>
                     </HeaderContent>
                 </BlogHeader>
 
-                <StyledThumbnail
-                    src="https://images.unsplash.com/photo-1546900703-cf06143d1239?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1591&q=80"
-                    alt="thumbnail"
-                />
+                <StyledThumbnail src={thumbnailUrl} />
                 <Container>
                     <Content>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Impedit recusandae laboriosam consequuntur
-                            facilis laborum quae ratione maxime voluptatum
-                            molestiae praesentium. Repellat praesentium
-                            doloremque voluptate, nobis laborum eveniet ex
-                            facere incidunt.
-                        </p>
-                        <img
-                            src="https://images.unsplash.com/photo-1477949331575-2763034b5fb5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                            alt="unsplash"
-                        />
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing
-                            elit. Soluta error, omnis cupiditate non aperiam
-                            nihil? Accusantium excepturi exercitationem maiores.
-                            Eius aspernatur a libero cumque porro et corrupti
-                            quod quibusdam aliquam?
-                        </p>
+                        {documentToReactComponents(json, options)}
                     </Content>
                 </Container>
             </Blog>

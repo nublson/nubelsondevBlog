@@ -7,9 +7,8 @@ import {
     Wrapper,
     Container,
 } from "../components/Layout/Elements"
-import { ButtonIcon } from "../components/UI/Icons"
 
-const BlogList = styled.ul`
+const BlogList = styled.div`
     width: 100%;
     list-style: none;
     position: relative;
@@ -19,11 +18,14 @@ const BlogList = styled.ul`
     justify-content: center;
     align-items: center;
 `
-const BlogItem = styled.li`
+
+const BlogItem = styled(Link)`
     position: relative;
     width: 100%;
     padding: 3rem;
     margin: 2rem;
+    text-decoration: none;
+    color: var(--text);
     background: url(${props => props.thumbnail}) no-repeat center;
     background-size: cover;
     border-radius: 10px;
@@ -57,8 +59,9 @@ const BlogItem = styled.li`
 
 const BlogInfo = styled.div`
     margin-bottom: 3rem;
+    padding: 3rem 0;
 
-    h3 {
+    h1 {
         font-size: 2.7rem;
     }
 
@@ -69,22 +72,6 @@ const BlogInfo = styled.div`
             color: var(--primary);
             font-weight: bold;
         }
-    }
-`
-
-const ButtonLink = styled(Link)`
-    font-size: 1.6rem;
-    font-weight: bold;
-    text-decoration: line-through;
-    color: var(--primary);
-    transition: all 0.2s;
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    &:hover {
-        text-decoration: line-through transparent;
     }
 `
 
@@ -103,6 +90,7 @@ const Blog = () => {
                         blogTitle
                         blogAuthor
                         blogDate(formatString: "MMMM d, YYYY")
+                        slug
                     }
                 }
             }
@@ -111,21 +99,25 @@ const Blog = () => {
 
     const { edges } = data.allContentfulBlogPost
     const nodes = edges.map(edge => {
-        const { id, blogThumbnail, blogTitle, blogAuthor, blogDate } = edge.node
+        const {
+            id,
+            blogThumbnail,
+            blogTitle,
+            blogAuthor,
+            blogDate,
+            slug,
+        } = edge.node
         const { url } = blogThumbnail.file
 
         return (
-            <BlogItem key={id} thumbnail={url}>
+            <BlogItem to={`/${slug}`} key={id} thumbnail={url}>
                 <BlogInfo>
-                    <h3>{blogTitle}</h3>
+                    <h1>{blogTitle}</h1>
                     <p>
                         {" "}
                         <span>{blogAuthor}</span> on {blogDate}
                     </p>
                 </BlogInfo>
-                <ButtonLink to="/">
-                    Read more <ButtonIcon />{" "}
-                </ButtonLink>
             </BlogItem>
         )
     })

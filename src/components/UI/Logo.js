@@ -27,8 +27,8 @@ const Logo = ({ spanName, namesize, spansize, to }) => {
     return (
         <CustomLogo
             to={to}
-            spy={true}
-            smooth={true}
+            spy="true"
+            smooth="true"
             namesize={namesize}
             spansize={spansize}
         >
