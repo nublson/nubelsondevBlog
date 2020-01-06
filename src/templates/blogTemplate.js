@@ -73,10 +73,14 @@ const HeaderContent = styled.div`
         text-align: center;
         justify-content: center;
         align-items: center;
+
+        h2 {
+            font-size: 4rem;
+        }
     }
     @media ${props => props.theme.mediaQueries.smaller} {
         h2 {
-            font-size: 4rem;
+            font-size: 3.5rem;
         }
     }
 `
@@ -96,6 +100,16 @@ const Content = styled.div`
     img {
         width: 100%;
         margin: 1rem 0;
+    }
+
+    p {
+        margin-bottom: 1rem;
+
+        b,
+        a {
+            color: var(--primary);
+            font-size: 2rem;
+        }
     }
 `
 
