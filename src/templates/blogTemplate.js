@@ -138,7 +138,7 @@ const BlogTemplate = ({ data }) => {
                     <HeaderContent>
                         <h2>{blogTitle}</h2>
                         <p>
-                            by <span>{blogAuthor}</span> em {blogDate}
+                            by <span>{blogAuthor}</span> on {blogDate}
                         </p>
                     </HeaderContent>
                 </BlogHeader>

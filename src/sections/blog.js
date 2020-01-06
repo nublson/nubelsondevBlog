@@ -89,7 +89,6 @@ const Blog = () => {
                         }
                         blogTitle
                         blogAuthor
-                        blogDate(formatString: "MMMM d, YYYY")
                         slug
                     }
                 }
@@ -99,14 +98,7 @@ const Blog = () => {
 
     const { edges } = data.allContentfulBlogPost
     const nodes = edges.map(edge => {
-        const {
-            id,
-            blogThumbnail,
-            blogTitle,
-            blogAuthor,
-            blogDate,
-            slug,
-        } = edge.node
+        const { id, blogThumbnail, blogTitle, blogAuthor, slug } = edge.node
         const { url } = blogThumbnail.file
 
         return (
@@ -115,7 +107,7 @@ const Blog = () => {
                     <h1>{blogTitle}</h1>
                     <p>
                         {" "}
-                        <span>{blogAuthor}</span> on {blogDate}
+                        <span>{blogAuthor}</span>
                     </p>
                 </BlogInfo>
             </BlogItem>
